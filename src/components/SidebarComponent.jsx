@@ -1,5 +1,5 @@
-import { SlHome } from "react-icons/sl";
 import React, { useState } from 'react';
+import { BiBriefcase, BiFileBlank, BiHome, BiUser } from "react-icons/bi";
 
 export default function SidebarComponent() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -14,10 +14,16 @@ export default function SidebarComponent() {
   };
 
   return (
-    <div className="md:flex flex-col md:flex-row md:min-h-screen w-full">
+    <div className="md:flex flex-col md:flex-row md:min-h-screen w-full shadow-xl">
       <div onClick={() => setOpenDropdown(false)} className="flex flex-col w-full md:w-64 text-gray-700 bg-white flex-shrink-0" x-data="{ open: false }">
-        <div className="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
-          <a href="#" className="text-lg font-semibold tracking-widest text-blue-900  rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">kf</a><a className="w-[500px] text-bold text-blue-500">.</a>
+        <div className="flex-shrink-0 pl-8 pr-2 py-4 flex flex-row items-center justify-between">
+          <div className="flex flex-col w-full">
+            <label className="switch self-end">
+              <input type="checkbox" />
+              <span className="slider"></span>
+            </label>
+            <a href="#" className="text-[50px] font-bold text-blue-900 mb-36">kf<span className="text-blue-500">.</span></a>
+          </div>
           <button className="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline" onClick={toggleMenu}>
             <svg fill="currentColor" viewBox="0 0 20 20" className="w-6 h-6">
               {openMenu ? (
@@ -29,10 +35,10 @@ export default function SidebarComponent() {
           </button>
         </div>
         <nav className={`flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto ${openMenu ? 'block' : 'hidden'}`}>
-          <a href="#home" className="block px-4 py-2 mt-2 text-sm font-semibold text-blue-900 rounded-lg hover:text-blue-500">Início</a>
-          <a href="#about" className="block px-4 py-2 mt-2 text-sm font-semibold text-blue-900 rounded-lg hover:text-blue-500 focus:bg-gra">Sobre</a>
-          <a href="#experience" className="block px-4 py-2 mt-2 text-sm font-semibold text-blue-900 rounded-lg hover:text-blue-500">Experiências</a>
-          <a href="#works" className="block px-4 py-2 mt-2 text-sm font-semibold text-blue-900 rounded-lg hover:text-blue-500">Projetos</a>
+          <a href="#home" className="flex items-center px-4 py-2 text-blue-900 hover:text-blue-500"><BiHome className="text-[25px] mr-2" /> Início</a>
+          <a href="#about" className="flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><BiUser className="text-[25px] mr-2" /> Sobre</a>
+          <a href="#experience" className="flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><BiBriefcase className="text-[25px] mr-2" /> Experiências</a>
+          <a href="#works" className="flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><BiFileBlank className="text-[25px] mr-2" /> Projetos</a>
         </nav>
       </div>
     </div>

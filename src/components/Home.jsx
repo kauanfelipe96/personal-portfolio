@@ -1,6 +1,6 @@
-import { MdEmail } from "react-icons/md";
-import { TfiLinkedin, TfiEmail } from "react-icons/tfi";
-import { VscGithubInverted, VscMail } from "react-icons/vsc";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 import { ReactTyped } from "react-typed";
 
 export default function Home() {
@@ -14,15 +14,13 @@ export default function Home() {
           "Sou amante dos games",
         ]}
           typeSpeed={40}
-          backSpeed={50} x
-          attr="placeholder"
+          backSpeed={50}
           loop>
-          <input type="text" className="text-center w-[300px] bg-transparent focus-visible:outline-0" />
         </ReactTyped></h2>
       <div className="flex items-center gap-6 text-blue-500 mt-5">
-        <a href="mailto:kauan_falima@hotmail.com" target="_blank"><MdEmail className="text-[35px]" /></a>
-        <a href="https://www.linkedin.com/in/kauanfelipe96/" target="_blank"><TfiLinkedin className="text-[30px]" alt="Link para perfil do LinkedIn" /></a>
-        <a href="https://github.com/kauanfelipe96" target="_blank"><VscGithubInverted className="text-[30px]" alt="Link para perfil no GitHub" /></a>
+        <a href="mailto:kauan_falima@hotmail.com" target="_blank"><FaEnvelope className="text-[25px] hover:text-blue-800" /></a>
+        <a href="https://github.com/kauanfelipe96" target="_blank"><FaGithub className="text-[25px] hover:text-black" alt="Link para perfil no GitHub" /></a>
+        <a href="https://www.linkedin.com/in/kauanfelipe96/" target="_blank"><FaLinkedinIn className="text-[25px] hover:text-blue-800" alt="Link para perfil do LinkedIn" /></a>
       </div>
       <button className="bg-blue-500 text-white font-bold rounded-full px-8 py-2 text-center mt-5">Curriculum Vitae</button>
 
