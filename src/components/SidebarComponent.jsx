@@ -14,9 +14,9 @@ export default function SidebarComponent() {
 
   return (
     <div className="md:flex flex-col md:flex-row md:min-h-screen w-full">
-      <div onClick={() => setOpenDropdown(false)} className="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" x-data="{ open: false }">
+      <div onClick={() => setOpenDropdown(false)} className="flex flex-col w-full md:w-64 text-gray-700 bg-white flex-shrink-0" x-data="{ open: false }">
         <div className="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
-          <a href="#" className="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Flowtrail UI</a>
+          <a href="#" className="text-lg font-semibold tracking-widest text-blue-900  rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">kf</a><a className="w-[500px] text-bold text-blue-500">.</a>
           <button className="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline" onClick={toggleMenu}>
             <svg fill="currentColor" viewBox="0 0 20 20" className="w-6 h-6">
               {openMenu ? (
