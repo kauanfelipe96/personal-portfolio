@@ -13,17 +13,17 @@ export default function About() {
           <div className="w-[50%]">
             <div className="mb-7">
               <h3 className="font-bold text-blue-900 leading-[1px]">Front-end</h3>
-              <h4 className="text-end text-blue-900">80%</h4>
+              <h4 className="text-end text-blue-900">70%</h4>
               <div className="w-[70%] bg-purple-500 h-[7px] rounded-full"></div>
             </div>
             <div className="mb-7">
               <h3 className="font-bold text-blue-900 leading-[1px]">Back-end</h3>
-              <h4 className="text-end text-blue-900">95%</h4>
+              <h4 className="text-end text-blue-900">85%</h4>
               <div className="w-[85%] bg-cyan-500 h-[7px] rounded-full"></div>
             </div>
             <div>
               <h3 className="font-bold text-blue-900 leading-[1px]">Databases</h3>
-              <h4 className="text-end text-blue-900">89%</h4>
+              <h4 className="text-end text-blue-900">80%</h4>
               <div className="w-[80%] bg-rose-500 h-[7px] rounded-full"></div>
             </div>
           </div>

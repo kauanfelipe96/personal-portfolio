@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BiBriefcase, BiFileBlank, BiHome, BiUser } from "react-icons/bi";
+import { PiBriefcaseThin, PiFilesThin, PiUserThin, PiHouseThin } from "react-icons/pi";
 
 export default function SidebarComponent() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -35,10 +35,10 @@ export default function SidebarComponent() {
           </button>
         </div>
         <nav className={`flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto ${openMenu ? 'block' : 'hidden'}`}>
-          <a href="#home" className="flex items-center px-4 py-2 text-blue-900 hover:text-blue-500"><BiHome className="text-[25px] mr-2" /> Início</a>
-          <a href="#about" className="flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><BiUser className="text-[25px] mr-2" /> Sobre</a>
-          <a href="#experience" className="flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><BiBriefcase className="text-[25px] mr-2" /> Experiências</a>
-          <a href="#works" className="flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><BiFileBlank className="text-[25px] mr-2" /> Projetos</a>
+          <a href="#home" className="flex items-center px-4 py-2 text-blue-900 hover:text-blue-500"><PiHouseThin className="text-[25px] mr-2 font-extralight" /> Início</a>
+          <a href="#about" className="flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiUserThin className="text-[25px] mr-2" /> Sobre</a>
+          <a href="#experience" className="flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiBriefcaseThin className="text-[25px] mr-2" /> Experiências</a>
+          <a href="#works" className="flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiFilesThin className="text-[25px] mr-2" /> Projetos</a>
         </nav>
       </div>
     </div>
