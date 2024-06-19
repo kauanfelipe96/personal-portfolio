@@ -26,6 +26,16 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/kauanfelipe96/" target="_blank"><FaLinkedin className="text-[25px] hover:text-blue-800" alt="Link para perfil do LinkedIn" /></a>
         </div>
         <button className="bg-blue-500 text-white font-bold rounded-full px-8 py-2 text-center mt-5 hover:scale-110 duration-500 hover:bg-blue-700">Curriculum Vitae</button>
+        <a href="#about" className="absolute bottom-5">
+          <div>
+            <p className="mb-3 text-blue-500 font-semibold">Ver Mais</p>
+            <div className="scroll-down">
+              <div className="mousey">
+                <div className="scroller"></div>
+              </div>
+            </div>
+          </div>
+        </a>
       </section>
     </>
   )
