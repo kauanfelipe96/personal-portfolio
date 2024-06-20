@@ -3,7 +3,7 @@ import { PiBriefcaseDuotone } from "react-icons/pi";
 export default function Experiences() {
   return (
     <section className="px-20 py-20" id="experience">
-      <h2 className="text-[35px] text-blue-900 font-bold">Experiências</h2>
+      <h2 className="text-[35px] text-blue-900 font-bold mb-5">Experiências</h2>
       <div className="flex xl:flex-row flex-col gap-10">
         <div className="xl:w-[50%] w-[100%] h-full bg-white rounded-xl py-10 px-8 shadow-xl justify-between gap-10">
           <div className="flex gap-5">

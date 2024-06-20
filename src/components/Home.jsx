@@ -23,9 +23,9 @@ export default function Home() {
             loop>
           </ReactTyped></h2>
         <div className="flex items-center gap-6 text-blue-500 mt-5">
-          <a href="mailto:kauan_falima@hotmail.com" target="_blank"><FaEnvelope className="text-[25px] hover:text-blue-800" /></a>
-          <a href="https://github.com/kauanfelipe96" target="_blank"><FaGithub className="text-[25px] hover:text-black" alt="Link para perfil no GitHub" /></a>
-          <a href="https://www.linkedin.com/in/kauanfelipe96/" target="_blank"><FaLinkedin className="text-[25px] hover:text-blue-800" alt="Link para perfil do LinkedIn" /></a>
+          <a href="mailto:kauan_falima@hotmail.com" target="_blank"><FaEnvelope className="text-[30px] hover:text-blue-800" /></a>
+          <a href="https://github.com/kauanfelipe96" target="_blank"><FaGithub className="text-[30px] hover:text-black" alt="Link para perfil no GitHub" /></a>
+          <a href="https://www.linkedin.com/in/kauanfelipe96/" target="_blank"><FaLinkedin className="text-[30px] hover:text-blue-800" alt="Link para perfil do LinkedIn" /></a>
         </div>
         <button className="bg-blue-500 text-white font-bold rounded-full px-8 py-2 text-center mt-5 hover:scale-110 duration-500 hover:bg-blue-700">Curriculum Vitae</button>
         <div className="flex gap-5 mt-5">

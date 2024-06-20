@@ -2,7 +2,7 @@ import persona from '../assets/images/persona.png'
 
 export default function About() {
   return (
-    <section className="px-20" id="about">
+    <section className="px-20 py-20" id="about">
       <h2 className="text-[35px] text-blue-900 font-bold">Sobre mim</h2>
       <div className="flex xl:flex-row flex-col items-center justify-between gap-6 mt-5">
         <img src={persona} alt="Avatar" className="w-[200px] h-[200px]" />
