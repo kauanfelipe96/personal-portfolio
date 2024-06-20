@@ -1,4 +1,4 @@
-import { PiBriefcaseDuotone } from "react-icons/pi";
+import { PiBriefcaseDuotone, PiGraduationCapDuotone } from "react-icons/pi";
 
 export default function Experiences() {
   return (
@@ -8,7 +8,7 @@ export default function Experiences() {
         <div className="xl:w-[50%] w-[100%] h-full bg-white rounded-xl py-10 px-8 shadow-xl justify-between gap-10">
           <div className="flex gap-5">
             <div className="flex flex-col items-center">
-              <PiBriefcaseDuotone className="text-[50px] text-blue-500" />
+              <PiBriefcaseDuotone className="text-[40px] text-blue-500" />
               <span className="h-[100%] w-[2px] bg-blue-400"></span>
             </div>
             <div className="pb-5">
@@ -25,7 +25,7 @@ export default function Experiences() {
           </div>
           <div className="flex gap-5">
             <div className="flex flex-col items-center">
-              <PiBriefcaseDuotone className="text-[50px] text-blue-500" />
+              <PiBriefcaseDuotone className="text-[40px] text-blue-500" />
               <span className="h-[100%] w-[2px] bg-blue-400"></span>
             </div>
             <div className="pb-5">
@@ -44,7 +44,7 @@ export default function Experiences() {
           </div>
           <div className="flex gap-5">
             <div className="flex flex-col items-center">
-              <PiBriefcaseDuotone className="text-[50px] text-blue-500" />
+              <PiBriefcaseDuotone className="text-[40px] text-blue-500" />
               <span className="h-[100%] w-[2px] bg-blue-400"></span>
             </div>
             <div>
@@ -59,10 +59,32 @@ export default function Experiences() {
             </div>
           </div>
         </div>
-        <div className="xl:w-[50%] w-[100%] h-full bg-white rounded-xl py-10 px-8 shadow-xl flex justify-between gap-10">
+
+        <div className="xl:w-[50%] w-[100%] h-full bg-white rounded-xl py-10 px-8 shadow-xl justify-between gap-10">
+          <div className="flex gap-5">
+            <div className="flex flex-col items-center">
+              <PiGraduationCapDuotone className="text-[50px] text-yellow-400" />
+              <span className="h-[100%] w-[2px] bg-yellow-400"></span>
+            </div>
+            <div className="pb-5">
+              <h3 className="text-sm text-blue-900 font-light">Julho 2016 - Presente</h3>
+              <p className="font-bold text-[25px] text-blue-900">Universidade Tecnológica Federal do Paraná</p>
+              <p className="font-semibold text-[18px] text-blue-900 mb-2">Análise e Desenvolvimento de Sistemas</p>
+            </div>
+          </div>
+          <div className="flex gap-5">
+            <div className="flex flex-col items-center">
+              <PiGraduationCapDuotone className="text-[50px] text-yellow-400" />
+              <span className="h-[100%] w-[2px] bg-yellow-400"></span>
+            </div>
+            <div className="pb-5">
+              <h3 className="text-sm text-blue-900 font-light">2009 - 2011</h3>
+              <p className="font-bold text-[25px] text-blue-900">Cursos de Especialização</p>
+              <h4 className="text-blue-900 text-[18px] mb-2 font-light">- Informática básica e avançada.</h4>
+              <h4 className="text-blue-900 text-[18px] mb-2 font-light">- Especialização em hardware.</h4>
+            </div>
+          </div>
         </div>
-
-
       </div>
     </section>
   )
