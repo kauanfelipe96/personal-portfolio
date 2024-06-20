@@ -15,28 +15,23 @@ body {
   background-color: #f8fafc;
 }
 
-/* The switch - the box around the slider */
 .switch {
   display: block;
   --width-of-switch: 2.5em;
   --height-of-switch: 1.5em;
-  /* size of sliding icon -- sun and moon */
   --size-of-icon: 1em;
-  /* it is like a inline-padding of switch */
   --slider-offset: 0.3em;
   position: relative;
   width: var(--width-of-switch);
   height: var(--height-of-switch);
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -80,4 +75,47 @@ input:checked+.slider:before {
 
 .css-1wvake5 {
   position: fixed !important;
+}
+
+.scroll-downs {
+  margin: auto;
+  width: 25px;
+  height: 55px;
+}
+
+.mousey {
+  width: 3px;
+  padding: 5px 10px;
+  height: 25px;
+  border: 2px solid #2563eb;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+
+.scroller {
+  width: 3px;
+  height: 7px;
+  border-radius: 25%;
+  background-color: #2563eb;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+  animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
 }
