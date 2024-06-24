@@ -37,10 +37,10 @@ export default function SidebarComponent({ setDarkMode, darkMode }) {
           </button>
         </div>
         <nav className={`dark:bg-slate-900 flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto ${openMenu ? 'block' : 'hidden'}`}>
-          <a href="#home" className="dark:text-slate-50 flex items-center px-4 py-2 text-blue-900 hover:text-blue-500"><PiHouseThin className="text-[25px] mr-2 font-extralight" /> Início</a>
-          <a href="#about" className="dark:text-slate-50  flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiUserThin className="text-[25px] mr-2" /> Sobre</a>
-          <a href="#experience" className="dark:text-slate-50 flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiBriefcaseThin className="text-[25px] mr-2" /> Experiências</a>
-          <a href="#works" className="dark:text-slate-50 flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiFilesThin className="text-[25px] mr-2" /> Projetos</a>
+          <a href="#home" className="dark:text-slate-50 dark:hover:text-blue-500 flex items-center px-4 py-2 text-blue-900 hover:text-blue-500"><PiHouseThin className="text-[25px] mr-2 font-extralight" /> Início</a>
+          <a href="#about" className="dark:text-slate-50 dark:hover:text-blue-500 flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiUserThin className="text-[25px] mr-2" /> Sobre</a>
+          <a href="#experience" className="dark:text-slate-50 dark:hover:text-blue-500 flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiBriefcaseThin className="text-[25px] mr-2" /> Experiências</a>
+          <a href="#works" className="dark:text-slate-50 dark:hover:text-blue-500 flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiFilesThin className="text-[25px] mr-2" /> Projetos</a>
         </nav>
       </div>
     </div>
