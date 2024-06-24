@@ -8,11 +8,11 @@ import usa from '../assets/images/usa-icon.png'
 export default function Home() {
   return (
     <>
-      <section className="h-[100vh] w-[calc(100vw-250px)] flex flex-col items-center justify-center" id="home">
+      <section className="h-[100vh] w-[calc(100vw-250px)] dark:bg-slate-950 flex flex-col items-center justify-center" id="home">
         <div className="teste">
         </div>
-        <h1 className="text-[40px] text-blue-900 font-bold">Kauan Felipe</h1>
-        <h2 className="mt-3">
+        <h1 className="text-[40px] dark:text-slate-50 text-blue-900 font-bold">Kauan Felipe</h1>
+        <h2 className="mt-3 dark:text-slate-50">
           <ReactTyped strings={[
             "Sou desenvolvedor full stack júnior",
             "Sou apaixonado por código",
