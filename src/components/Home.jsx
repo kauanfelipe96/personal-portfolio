@@ -8,7 +8,7 @@ import usa from '../assets/images/usa-icon.png'
 export default function Home() {
   return (
     <>
-      <section className="h-[100vh] w-[calc(100vw-250px)] dark:bg-slate-950 flex flex-col items-center justify-center" id="home">
+      <section className="h-[100vh] dark:bg-slate-950 flex flex-col items-center md:justify-center justify-start lg:pt-0 pt-80" id="home">
         <div className="teste">
         </div>
         <h1 className="text-[40px] dark:text-slate-50 text-blue-900 font-bold">Kauan Felipe</h1>

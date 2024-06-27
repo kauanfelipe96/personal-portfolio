@@ -16,15 +16,15 @@ export default function SidebarComponent({ setDarkMode, darkMode }) {
   };
 
   return (
-    <div className="dark:shadow-black md:flex flex-col md:flex-row md:min-h-screen w-full shadow-xl">
-      <div onClick={() => setOpenDropdown(false)} className="flex flex-col w-full md:w-64 text-gray-700 bg-white flex-shrink-0" x-data="{ open: false }">
+    <div className="dark:shadow-black md:flex flex-col md:flex-row md:min-h-screen fixed w-full z-10">
+      <div onClick={() => setOpenDropdown(false)} className="flex flex-col w-full md:w-64 text-gray-700 bg-white flex-shrink-0 shadow-xl" x-data="{ open: false }">
         <div className="dark:bg-slate-900 flex-shrink-0 pl-8 pr-2 py-4 flex flex-row items-center justify-between">
           <div className="flex flex-col w-full">
-            <label className="switch self-end">
+            <label className="switch lg:self-end self-start">
               <input type="checkbox" onChange={() => setDarkMode(!darkMode)} checked={darkMode} />
               <span className="slider"></span>
             </label>
-            <a href="#" className="dark:text-slate-50 text-[50px] font-bold text-blue-900 mb-36">kf<span className="text-blue-500">.</span></a>
+            <a href="#" className="dark:text-slate-50 text-[50px] font-bold text-blue-900 lg:mb-36 mb-0">kf<span className="text-blue-500">.</span></a>
           </div>
           <button className="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline" onClick={toggleMenu}>
             <svg fill="currentColor" viewBox="0 0 20 20" className="w-6 h-6">

@@ -2,7 +2,7 @@ import { PiBriefcaseDuotone, PiGraduationCapDuotone } from "react-icons/pi";
 
 export default function Experiences() {
   return (
-    <section className="dark:bg-slate-950 px-20 py-20" id="experience">
+    <section className="dark:bg-slate-950 lg:px-20 px-5 py-20" id="experience">
       <h2 className="dark:text-slate-50 dark:bg-slate-950 text-[35px] text-blue-900 font-bold mb-5">Experiências</h2>
       <div className="flex xl:flex-row flex-col gap-10">
         <div className="xl:w-[50%] w-[100%] h-full dark:bg-slate-950 dark:border-blue-500 dark:border  bg-white rounded-xl py-10 px-8 shadow-xl justify-between gap-10">
