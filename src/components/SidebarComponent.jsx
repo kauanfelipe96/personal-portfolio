@@ -16,7 +16,7 @@ export default function SidebarComponent({ setDarkMode, darkMode }) {
   };
 
   return (
-    <div className="dark:shadow-black md:flex flex-col md:flex-row md:min-h-screen fixed w-full z-10">
+    <div className="dark:shadow-black md:flex flex-col md:flex-row md:min-h-screen fixed lg:w-[256px] w-full z-10">
       <div onClick={() => setOpenDropdown(false)} className="flex flex-col w-full md:w-64 text-gray-700 bg-white flex-shrink-0 shadow-xl" x-data="{ open: false }">
         <div className="dark:bg-slate-900 flex-shrink-0 pl-8 pr-2 py-4 flex flex-row items-center justify-between">
           <div className="flex flex-col w-full">
