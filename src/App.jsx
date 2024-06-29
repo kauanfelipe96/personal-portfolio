@@ -17,7 +17,7 @@ function App() {
     setScreenLoading(true);
     setTimeout(() => {
       setScreenLoading(false);
-    }, 1800);
+    }, 1500);
   }, [])
 
   useEffect(() => {
