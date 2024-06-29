@@ -1,3 +1,4 @@
+import { Bounce, Fade } from "react-awesome-reveal";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
@@ -9,14 +10,18 @@ export default function Home() {
   return (
     <>
       <section className="h-[100vh] dark:bg-slate-950 flex flex-col items-center md:justify-center justify-start lg:pt-0 pt-80" id="home">
-        <div className="teste">
-        </div>
-        <h1 className="text-[40px] dark:text-slate-50 text-blue-900 font-bold">Kauan Felipe</h1>
+        <Bounce duration={2000}>
+          <h1 className="text-[40px] dark:text-slate-50 text-blue-900 font-bold">Kauan Felipe</h1>
+        </Bounce>
         <h2 className="mt-3 dark:text-slate-50">
           <ReactTyped strings={[
-            "Sou desenvolvedor full stack júnior",
-            "Sou apaixonado por código",
-            "Sou amante dos games",
+            "Desenvolvedor full stack júnior",
+            "C#",
+            ".Net Core",
+            "API REST",
+            "MySQL",
+            "JavaScript",
+            "React.js"
           ]}
             typeSpeed={40}
             backSpeed={50}

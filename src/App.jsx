@@ -6,10 +6,19 @@ import SidebarComponent from './components/SidebarComponent'
 import Home from './components/Home'
 import About from './components/About'
 import Experiences from './components/Experiences'
+import Preloader from "./components/Preloader"
 
 function App() {
 
   const [darkMode, setDarkMode] = useState(false)
+  const [screenLoading, setScreenLoading] = useState(false);
+
+  useEffect(() => {
+    setScreenLoading(true);
+    setTimeout(() => {
+      setScreenLoading(false);
+    }, 1800);
+  }, [])
 
   useEffect(() => {
     if (darkMode) {
@@ -20,15 +29,24 @@ function App() {
   }, [darkMode])
 
   return (
-    <div className="md:flex flex-col md:flex-row md:min-h-screen w-full">
-      <SidebarComponent setDarkMode={setDarkMode} darkMode={darkMode} />
-      <div className="lg:ml-[256px] ml-0">
-        <Home />
-        <About />
-        <Experiences />
-      </div>
-    </div>
+    <>
+      {screenLoading ?
+        <Preloader />
+        :
+        <>
+          <SidebarComponent setDarkMode={setDarkMode} darkMode={darkMode} />
+          <div className="md:flex flex-col md:flex-row md:min-h-screen w-full">
+            <div className="lg:ml-[256px] ml-0">
+              <Home />
+              <About />
+              <Experiences />
+            </div>
+          </div>
+        </>
+      }
+    </>
   )
 }
+
 
 export default App

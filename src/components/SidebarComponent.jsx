@@ -20,7 +20,7 @@ export default function SidebarComponent({ setDarkMode, darkMode }) {
       <div onClick={() => setOpenDropdown(false)} className="flex flex-col w-full md:w-64 text-gray-700 bg-white flex-shrink-0 shadow-xl" x-data="{ open: false }">
         <div className="dark:bg-slate-900 flex-shrink-0 pl-8 pr-2 py-4 flex flex-row items-center justify-between">
           <div className="flex flex-col w-full">
-            <label className="switch lg:self-end self-start">
+            <label className="switch self-end">
               <input type="checkbox" onChange={() => setDarkMode(!darkMode)} checked={darkMode} />
               <span className="slider"></span>
             </label>
