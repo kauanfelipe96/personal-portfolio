@@ -18,9 +18,9 @@ export default function SidebarComponent({ setDarkMode, darkMode }) {
   return (
     <div className="dark:shadow-black md:flex flex-col md:flex-row md:min-h-screen fixed lg:w-[256px] w-full z-10">
       <div onClick={() => setOpenDropdown(false)} className="flex flex-col w-full md:w-64 text-gray-700 bg-white flex-shrink-0 shadow-xl" x-data="{ open: false }">
-        <div className="dark:bg-slate-900 flex-shrink-0 pl-8 pr-2 py-4 flex flex-row items-center justify-between">
+        <div className="dark:bg-slate-900 flex-shrink-0 pl-8 pr-2 lg:py-4 py-1 flex flex-row items-center justify-between">
           <div className="flex flex-col w-full">
-            <label className="switch self-end">
+            <label className="switch self-end lg:block hidden">
               <input type="checkbox" onChange={() => setDarkMode(!darkMode)} checked={darkMode} />
               <span className="slider"></span>
             </label>
@@ -37,7 +37,16 @@ export default function SidebarComponent({ setDarkMode, darkMode }) {
           </button>
         </div>
         <nav className={`dark:bg-slate-900 flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto ${openMenu ? 'block' : 'hidden'}`}>
-          <a href="#home" className="dark:text-slate-50 dark:hover:text-blue-500 flex items-center px-4 py-2 text-blue-900 hover:text-blue-500"><PiHouseThin className="text-[25px] mr-2 font-extralight" /> Início</a>
+          <div className="flex items-center justify-between">
+            <a href="#home" className="dark:text-slate-50 dark:hover:text-blue-500 flex items-center px-4 py-2 text-blue-900 hover:text-blue-500"><PiHouseThin className="text-[25px] mr-2 font-extralight" /> Início</a>
+            <div className="w-full flex items-center justify-end">
+              <label className="switch self-end absolute right-2 lg:hidden block">
+                <input type="checkbox" onChange={() => setDarkMode(!darkMode)} checked={darkMode} />
+                <span className="slider"></span>
+              </label>
+            </div>
+            <div></div>
+          </div>
           <a href="#about" className="dark:text-slate-50 dark:hover:text-blue-500 flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiUserThin className="text-[25px] mr-2" /> Sobre</a>
           <a href="#experience" className="dark:text-slate-50 dark:hover:text-blue-500 flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiBriefcaseThin className="text-[25px] mr-2" /> Experiências</a>
           <a href="#works" className="dark:text-slate-50 dark:hover:text-blue-500 flex items-center px-4 py-2 mt-2 text-blue-900 hover:text-blue-500"><PiFilesThin className="text-[25px] mr-2" /> Projetos</a>
