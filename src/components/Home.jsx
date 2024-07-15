@@ -15,7 +15,7 @@ export default function Home() {
         </Fade>
         <h2 className="mt-3 dark:text-slate-50">
           <ReactTyped strings={[
-            "Desenvolvedor full stack júnior",
+            "Desenvolvedor Full Stack",
             "C#",
             ".Net Core",
             "API REST",
