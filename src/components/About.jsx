@@ -4,7 +4,7 @@ import persona from '../assets/images/persona.png'
 export default function About() {
   return (
     <section className="dark:bg-slate-950 lg:px-20 px-5 py-20" id="about">
-      <Fade direction="left" duration={2000}>
+      <Fade direction="left" duration={2000} triggerOnce>
         <h2 className="dark:bg-slate-950 dark:text-slate-50 text-[35px] text-blue-900 font-bold">Sobre mim</h2>
       </Fade>
       <div className="flex xl:flex-row flex-col items-center justify-between gap-6 mt-5">
@@ -15,7 +15,7 @@ export default function About() {
             <div className="xl:w-[50%] w-[100%]">
               <div className="mb-7">
                 <h3 className="dark:text-slate-50 font-bold text-blue-900 leading-[1px]">Front-end</h3>
-                <h4 className="dark:text-slate-50 text-end text-blue-900">50%</h4>
+                <h4 className="dark:text-slate-50 text-end text-blue-900">60%</h4>
                 <div className="w-[70%] bg-purple-500 h-[7px] rounded-full"></div>
               </div>
               <div className="mb-7">

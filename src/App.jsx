@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import Sidebar from './components/Sidebar'
 import Home from './components/Home'
 import About from './components/About'
@@ -12,7 +12,7 @@ function App() {
   const [screenLoading, setScreenLoading] = useState(false);
   const [screenLoaded, setScreenLoaded] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setScreenLoading(true);
     setTimeout(() => {
       setScreenLoading(false);
