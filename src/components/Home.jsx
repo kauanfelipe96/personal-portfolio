@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <section className="h-[100vh] dark:bg-slate-950 flex flex-col items-center md:justify-center justify-start lg:pt-0 pt-60" id="home">
-        <Fade duration={2000}>
+        <Fade duration={2000} delay={1500}>
           <h1 className="text-[40px] dark:text-slate-50 text-blue-900 font-bold">Kauan Felipe</h1>
         </Fade>
         <h2 className="mt-3 dark:text-slate-50">
