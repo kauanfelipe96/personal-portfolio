@@ -39,7 +39,7 @@ export const translations = {
     hero: {
       eyebrow: 'Desenvolvedor Full Stack · .NET & React',
       headline: 'Construo sistemas confiáveis que sustentam negócios.',
-      sub: 'Especializado em construir e modernizar sistemas de missão crítica — APIs sólidas, integrações que não quebram e deploys sem dor de cabeça. Performance e qualidade de código acima de tudo.',
+      sub: 'Desenvolvedor full-stack e arquiteto em .NET e React, responsável por sistemas críticos de ponta a ponta — gateways de pagamento, integrações ERP e modernização de APIs legadas. Disponível para realocação internacional ou trabalho remoto.',
       ctaPrimary: 'Ver experiência',
       ctaSecondary: 'Baixar CV',
       stats: [
@@ -47,13 +47,7 @@ export const translations = {
         { to: 99.5, decimals: 1, suffix: '%', label: 'aprovação de pagamentos' },
         { to: 1000, suffix: '+', group: true, label: 'transações/mês integradas' },
       ],
-      taglines: [
-        'Desenvolvedor Full Stack',
-        '.NET & React · do back ao deploy',
-        'Back-end · Front-end · DevOps',
-        'Construindo sistemas que escalam',
-        'Engenharia full stack ponta a ponta',
-      ],
+      tagline: 'Back-end · Front-end · DevOps',
       terminalLines: [
         '$ whoami',
         'kauan_felipe — full stack developer',
@@ -145,7 +139,7 @@ export const translations = {
     hero: {
       eyebrow: 'Full Stack Developer · .NET & React',
       headline: 'I build reliable systems that keep businesses running.',
-      sub: "Specialized in building and modernizing mission-critical systems — solid APIs, integrations that don't break, and painless deploys. Performance and code quality above all.",
+      sub: 'Full-stack developer and architect in .NET and React, owning mission-critical systems end-to-end — payment gateways, ERP integrations and legacy API modernization. Open to international relocation or remote work.',
       ctaPrimary: 'View experience',
       ctaSecondary: 'Download CV',
       stats: [
@@ -153,13 +147,7 @@ export const translations = {
         { to: 99.5, decimals: 1, suffix: '%', label: 'payment approval rate' },
         { to: 1000, suffix: '+', group: true, label: 'transactions/mo integrated' },
       ],
-      taglines: [
-        'Full Stack Developer',
-        '.NET & React · database to deploy',
-        'Back-end · Front-end · DevOps',
-        'Building systems that scale',
-        'End-to-end full stack engineering',
-      ],
+      tagline: 'Back-end · Front-end · DevOps',
       terminalLines: [
         '$ whoami',
         'kauan_felipe — full stack developer',

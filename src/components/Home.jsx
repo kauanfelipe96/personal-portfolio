@@ -1,41 +1,24 @@
-import { useEffect, useState } from 'react'
 import { useLang } from '../i18n/useLang'
 import { translations } from '../i18n/translations'
-import { Eyebrow, Reveal, Stats, SocialRow, ScrollCue } from './primitives'
-
-const TAGLINE_INTERVAL = 4500
+import { Reveal, Stats, SocialRow, ScrollCue } from './primitives'
+import logo from '../assets/images/logo.jpg'
 
 export default function Home() {
   const { lang } = useLang()
   const t = translations[lang]
-  const [tagIdx, setTagIdx] = useState(2)
-
-  useEffect(() => {
-    const taglines = t.hero.taglines || []
-    if (taglines.length < 2) return
-    const id = setInterval(() => {
-      setTagIdx((i) => (i + 1) % taglines.length)
-    }, TAGLINE_INTERVAL)
-    return () => clearInterval(id)
-  }, [t])
-
-  const taglines = t.hero.taglines || []
-  const tagline = taglines[tagIdx] || taglines[0] || t.role
   const cvHref = `${import.meta.env.BASE_URL}${t.cv}`
 
   return (
     <header className="hero hero-editorial" id="top">
       <div className="hero-ed-main">
         <Reveal>
-          <Eyebrow>{t.hero.eyebrow}</Eyebrow>
+          <img className="hero-logo" src={logo} alt={t.name} width="76" height="76" />
         </Reveal>
         <Reveal delay={80}>
           <h1 className="hero-name">{t.name}</h1>
         </Reveal>
         <Reveal delay={150}>
-          <div className="hero-tagline" key={tagIdx}>
-            {tagline}
-          </div>
+          <div className="hero-tagline">{t.hero.tagline}</div>
         </Reveal>
         <Reveal delay={220}>
           <p className="hero-sub wide">{t.hero.sub}</p>

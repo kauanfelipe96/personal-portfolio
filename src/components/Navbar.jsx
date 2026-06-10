@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useLang } from '../i18n/useLang'
 import { WorkIcon, SkillsIcon, EducationIcon, ContactIcon, FlagBR, FlagUS } from './icons'
+import logo from '../assets/images/logo.jpg'
 
 const ICONS = {
   work: WorkIcon,
@@ -52,7 +53,7 @@ export default function Navbar() {
     <header className="navbar-wrap">
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <a className="nb-brand" href="#top" title={t('name') || 'Kauan Felipe'}>
-          <span className="brand-mark">{t('initials')}</span>
+          <img className="brand-logo" src={logo} alt={t('name') || 'Kauan Felipe'} width="36" height="36" />
         </a>
         <span className="nb-divider"></span>
         <div className="nb-links">
