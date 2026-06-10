@@ -3,6 +3,7 @@ import { LanguageProvider } from './i18n/LanguageContext'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Experiences from './components/Experiences'
+import Stack from './components/Stack'
 import Education from './components/Education'
 import Preloader from './components/Preloader'
 
@@ -22,6 +23,7 @@ function App() {
       <main className="w-full">
         <Home />
         <Experiences />
+        <Stack />
         <Education />
       </main>
     </LanguageProvider>
