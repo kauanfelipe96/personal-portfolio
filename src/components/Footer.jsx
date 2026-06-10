@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="footer">
       <img className="footer-logo" src={logo} alt={t.name} width="30" height="30" />
       <span className="footer-note">
-        © {new Date().getFullYear()} {t.name} — {t.footerNote}
+        © {new Date().getFullYear()} {t.name}
       </span>
       <a className="footer-top" href="#top">
         ↑ Top

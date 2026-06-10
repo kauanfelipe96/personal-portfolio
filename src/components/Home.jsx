@@ -1,7 +1,6 @@
 import { useLang } from '../i18n/useLang'
 import { translations } from '../i18n/translations'
 import { Reveal, Stats, SocialRow, ScrollCue } from './primitives'
-import logo from '../assets/images/logo.jpg'
 
 export default function Home() {
   const { lang } = useLang()
@@ -12,9 +11,6 @@ export default function Home() {
     <header className="hero hero-editorial" id="top">
       <div className="hero-ed-main">
         <Reveal>
-          <img className="hero-logo" src={logo} alt={t.name} width="76" height="76" />
-        </Reveal>
-        <Reveal delay={80}>
           <h1 className="hero-name">{t.name}</h1>
         </Reveal>
         <Reveal delay={150}>

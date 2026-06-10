@@ -1,15 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { GithubIcon, LinkedinIcon, EmailIcon } from './icons'
 
-export function Eyebrow({ children }) {
-  return (
-    <span className="eyebrow">
-      <span className="eyebrow-dot"></span>
-      {children}
-    </span>
-  )
-}
-
 export function SectionHeader({ num, title }) {
   return (
     <div className="sec-head">

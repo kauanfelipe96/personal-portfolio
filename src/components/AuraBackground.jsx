@@ -27,7 +27,7 @@ void main(){
   vec2 uv = gl_FragCoord.xy / uRes.xy;
   vec2 asp = vec2(uRes.x / uRes.y, 1.0);
   vec2 p = (uv - 0.5) * asp;
-  float t = uTime * 0.05 * (0.5 + uIntensity);
+  float t = uTime * 0.065 * (0.5 + uIntensity);
   vec2 q = vec2(fbm(p * 1.4 + t), fbm(p * 1.4 - t + 4.0));
   float f = fbm(p * 1.7 + q * 1.9 + vec2(0.0, t * 0.6));
   vec3 c1 = vec3(0.05, 0.20, 0.66);
@@ -43,6 +43,7 @@ void main(){
   col += vec3(0.10, 0.26, 0.52) * md * 0.45 * uIntensity;
   float vig = smoothstep(1.35, 0.18, length(p));
   col *= 0.5 + 0.5 * vig;
+  col *= 1.15;
   gl_FragColor = vec4(col, 1.0);
 }
 `

@@ -2,7 +2,8 @@ import { useLang } from '../i18n/useLang'
 import { translations } from '../i18n/translations'
 import { Reveal, SectionHeader } from './primitives'
 
-const DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/'
+const ICONS = import.meta.glob('../assets/icons/*.svg', { eager: true, query: '?url', import: 'default' })
+const iconUrl = (name) => ICONS[`../assets/icons/${name}.svg`]
 
 export default function Stack() {
   const { lang } = useLang()
@@ -17,7 +18,7 @@ export default function Stack() {
             <div className="tech-tile glass">
               <img
                 className="tech-icon"
-                src={`${DEVICON}${tech.icon}.svg`}
+                src={iconUrl(tech.icon)}
                 alt={tech.label}
                 loading="lazy"
                 width="40"
