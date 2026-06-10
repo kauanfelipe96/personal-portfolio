@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Design mockup reference (local only)
+Portfolio - Kauan Felipe (standalone).html

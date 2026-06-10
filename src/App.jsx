@@ -1,8 +1,7 @@
 import { useLayoutEffect, useState } from 'react'
 import { LanguageProvider } from './i18n/LanguageContext'
+import Navbar from './components/Navbar'
 import Home from './components/Home'
-import About from './components/About'
-import Experiences from './components/Experiences'
 import Preloader from './components/Preloader'
 
 function App() {
@@ -17,11 +16,10 @@ function App() {
   return (
     <LanguageProvider>
       {screenLoading && <Preloader />}
-      <div className="w-full min-h-screen">
+      <Navbar />
+      <main className="w-full">
         <Home />
-        <About />
-        <Experiences />
-      </div>
+      </main>
     </LanguageProvider>
   )
 }
