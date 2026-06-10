@@ -1,47 +1,48 @@
 import { useLang } from '../i18n/useLang'
-import { useReveal } from '../hooks/useReveal'
+import { translations } from '../i18n/translations'
+import { Reveal, SectionHeader } from './primitives'
+
+const DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/'
 
 export default function Stack() {
-  const { t } = useLang()
-  const categories = t('stack.categories') || []
-  const { ref, visible } = useReveal()
+  const { lang } = useLang()
+  const t = translations[lang]
 
   return (
-    <section id="stack" className="px-5 sm:px-8 py-24 sm:py-32">
-      <div
-        ref={ref}
-        className={`mx-auto max-w-container transition-opacity ${visible ? 'opacity-100 animate-cueIn' : 'opacity-0'}`}
-      >
-        <div className="flex items-baseline justify-between mb-10">
-          <h2 className="font-display font-bold text-text text-[clamp(28px,5vw,48px)] tracking-tight">
-            {t('stack.title')}
-          </h2>
-          <span className="font-mono text-xs text-faint">02 / 04</span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {categories.map((c) => (
-            <div
-              key={c.key}
-              className="rounded-xl p-6 border border-white/10 bg-white/[0.035] backdrop-blur-sm"
-            >
-              <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-faint mb-4">
-                {c.label}
-              </h3>
-              <ul className="flex flex-wrap gap-2">
-                {c.items.map((item) => (
-                  <li
-                    key={item}
-                    className="px-2.5 py-1 rounded border border-white/15 text-sm text-text"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+    <section className="section" id="skills">
+      <SectionHeader num="02" title={t.skillsTitle} />
+      <div className="tech-grid">
+        {t.techStack.map((tech, i) => (
+          <Reveal key={tech.label} delay={i * 40}>
+            <div className="tech-tile glass">
+              <img
+                className="tech-icon"
+                src={`${DEVICON}${tech.icon}.svg`}
+                alt={tech.label}
+                loading="lazy"
+                width="40"
+                height="40"
+              />
+              <span className="tech-name">{tech.label}</span>
             </div>
-          ))}
-        </div>
+          </Reveal>
+        ))}
       </div>
+      <Reveal delay={120}>
+        <div className="practices-block">
+          <div className="practices-label">
+            <span className="sec-num">+</span>
+            {t.practicesLabel}
+          </div>
+          <div className="practice-grid">
+            {t.practices.map((p) => (
+              <span className="chip" key={p}>
+                {p}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Reveal>
     </section>
   )
 }

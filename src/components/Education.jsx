@@ -1,52 +1,50 @@
 import { useLang } from '../i18n/useLang'
-import { useReveal } from '../hooks/useReveal'
+import { translations } from '../i18n/translations'
+import { Reveal, SectionHeader } from './primitives'
+import { GradCapIcon } from './icons'
 
 export default function Education() {
-  const { t } = useLang()
-  const items = t('education.items') || []
-  const languages = t('education.languages')
-  const languagesTitle = t('education.languagesTitle')
-  const { ref, visible } = useReveal()
+  const { lang } = useLang()
+  const t = translations[lang]
 
   return (
-    <section id="education" className="px-5 sm:px-8 py-24 sm:py-32">
-      <div
-        ref={ref}
-        className={`mx-auto max-w-container transition-opacity ${visible ? 'opacity-100 animate-cueIn' : 'opacity-0'}`}
-      >
-        <div className="flex items-baseline justify-between mb-10">
-          <h2 className="font-display font-bold text-text text-[clamp(28px,5vw,48px)] tracking-tight">
-            {t('education.title')}
-          </h2>
-          <span className="font-mono text-xs text-faint">03 / 04</span>
-        </div>
-
-        <ul className="flex flex-col gap-6">
-          {items.map((item) => (
-            <li
-              key={item.degree}
-              className="rounded-xl p-6 sm:p-8 border border-white/10 bg-white/[0.035] backdrop-blur-sm"
-            >
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-                <h3 className="font-display font-semibold text-text text-xl tracking-tight">
-                  {item.degree}
-                </h3>
-                <span className="font-mono text-xs text-muted">{item.period}</span>
+    <section className="section" id="education">
+      <SectionHeader num="03" title={t.educationTitle} />
+      <div className="edu-wrap">
+        {t.education.map((e, i) => (
+          <Reveal key={i}>
+            <article className="edu-card glass">
+              <div className="edu-icon">
+                <GradCapIcon />
               </div>
-              <p className="text-muted">{item.institution}</p>
-              <p className="font-mono text-xs text-faint mt-1">
-                {item.location} · {item.status}
-              </p>
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-8 rounded-xl p-6 sm:p-8 border border-white/10 bg-white/[0.035] backdrop-blur-sm">
-          <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-faint mb-2">
-            {languagesTitle}
-          </h3>
-          <p className="text-muted">{languages}</p>
-        </div>
+              <div className="edu-left">
+                <h3 className="edu-course">{e.course}</h3>
+                <div className="edu-school">{e.school}</div>
+                <div className="edu-place">{e.place}</div>
+              </div>
+              <div className="edu-right">
+                <span className="edu-status">{e.status}</span>
+                <span className="edu-period">{e.period}</span>
+              </div>
+            </article>
+          </Reveal>
+        ))}
+        <Reveal delay={100}>
+          <div className="lang-block">
+            <div className="lang-block-label">
+              <span className="sec-num">+</span>
+              {t.languagesLabel}
+            </div>
+            <div className="lang-strip glass">
+              {t.languages.map((l) => (
+                <div className="lang-item" key={l.name}>
+                  <span className="lang-name">{l.name}</span>
+                  <span className="lang-level">{l.level}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )
