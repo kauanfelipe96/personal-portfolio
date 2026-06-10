@@ -1,5 +1,6 @@
 import { useLayoutEffect, useState } from 'react'
 import { LanguageProvider } from './i18n/LanguageContext'
+import AuraBackground from './components/AuraBackground'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Experiences from './components/Experiences'
@@ -21,15 +22,18 @@ function App() {
   return (
     <LanguageProvider>
       {screenLoading && <Preloader />}
-      <Navbar />
-      <main className="w-full">
-        <Home />
-        <Experiences />
-        <Stack />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
+      <AuraBackground intensity={0.4} />
+      <div className="content">
+        <Navbar />
+        <main className="main">
+          <Home />
+          <Experiences />
+          <Stack />
+          <Education />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </LanguageProvider>
   )
 }
