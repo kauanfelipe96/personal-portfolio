@@ -1,137 +1,88 @@
 import { useEffect, useState } from 'react'
-import { FiDownload, FiMenu, FiX } from 'react-icons/fi'
 import { useLang } from '../i18n/useLang'
+import { WorkIcon, SkillsIcon, EducationIcon, ContactIcon, FlagBR, FlagUS } from './icons'
 
-const SECTIONS = [
-  { id: 'experience', key: 'nav.experience' },
-  { id: 'stack', key: 'nav.stack' },
-  { id: 'education', key: 'nav.education' },
-  { id: 'contact', key: 'nav.contact' },
-]
+const ICONS = {
+  work: WorkIcon,
+  skills: SkillsIcon,
+  education: EducationIcon,
+  contact: ContactIcon,
+}
 
 export default function Navbar() {
   const { lang, setLang, t } = useLang()
   const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState('')
+
+  const items = [
+    { id: 'work', label: t('nav.work') },
+    { id: 'skills', label: t('nav.skills') },
+    { id: 'education', label: t('nav.education') },
+    { id: 'contact', label: t('nav.contact') },
+  ]
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8)
+    const ids = items.map((i) => i.id)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24)
+      const pos = window.scrollY + window.innerHeight * 0.34
+      let current = ''
+      for (const id of ids) {
+        const el = document.getElementById(id)
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY
+          if (top <= pos) current = id
+        }
+      }
+      setActive(current)
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang])
 
-  const cvHref = `${import.meta.env.BASE_URL}Kauan-Felipe-CV-${lang === 'pt' ? 'PT' : 'EN'}.pdf`
+  const toggleLang = () => setLang(lang === 'pt' ? 'en' : 'pt')
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${
-        scrolled ? 'bg-bg/70 border-b border-white/10 backdrop-blur-md' : 'bg-transparent'
-      }`}
-    >
-      <div className="mx-auto max-w-container px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2 group">
-          <span
-            className="w-9 h-9 rounded-lg flex items-center justify-center font-mono font-bold text-bg text-sm"
-            style={{ background: 'var(--accent)' }}
-            aria-hidden="true"
-          >
-            KF
-          </span>
-          <span className="hidden sm:inline font-mono text-xs text-muted group-hover:text-text transition-colors">
-            kauanfelipe96
-          </span>
+    <header className="navbar-wrap">
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <a className="nb-brand" href="#top" title={t('name') || 'Kauan Felipe'}>
+          <span className="brand-mark">{t('initials')}</span>
         </a>
-
-        <nav className="hidden md:flex items-center gap-1">
-          {SECTIONS.map((s) => (
-            <a
-              key={s.id}
-              href={`#${s.id}`}
-              className="px-3 py-2 text-sm text-muted hover:text-text transition-colors"
-            >
-              {t(s.key)}
-            </a>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center font-mono text-xs">
-            <button
-              type="button"
-              onClick={() => setLang('pt')}
-              aria-pressed={lang === 'pt'}
-              aria-label="Português"
-              className={`px-2 py-1 rounded-l border border-white/10 ${
-                lang === 'pt' ? 'text-bg' : 'text-muted hover:text-text'
-              }`}
-              style={lang === 'pt' ? { background: 'var(--accent)' } : undefined}
-            >
-              PT
-            </button>
-            <button
-              type="button"
-              onClick={() => setLang('en')}
-              aria-pressed={lang === 'en'}
-              aria-label="English"
-              className={`px-2 py-1 rounded-r border border-l-0 border-white/10 ${
-                lang === 'en' ? 'text-bg' : 'text-muted hover:text-text'
-              }`}
-              style={lang === 'en' ? { background: 'var(--accent)' } : undefined}
-            >
-              EN
-            </button>
-          </div>
-
-          <a
-            href={cvHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded border border-white/15 text-sm text-text hover:border-accent hover:text-accent-bright transition-colors"
-          >
-            <FiDownload className="text-base" />
-            {t('nav.downloadCv')}
-          </a>
-
+        <span className="nb-divider"></span>
+        <div className="nb-links">
+          {items.map((it) => {
+            const Icon = ICONS[it.id]
+            return (
+              <a
+                key={it.id}
+                className={`nb-link ${active === it.id ? 'active' : ''}`}
+                href={`#${it.id}`}
+                title={it.label}
+              >
+                <span className="nb-icon"><Icon /></span>
+                <span className="nb-label">{it.label}</span>
+              </a>
+            )
+          })}
+        </div>
+        <span className="nb-divider"></span>
+        <div className="nb-actions">
           <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            className="md:hidden p-2 text-muted hover:text-text"
+            className="nb-flag"
+            onClick={toggleLang}
+            aria-label={lang === 'pt' ? 'Switch to English' : 'Mudar para Português'}
+            title={lang === 'pt' ? 'English' : 'Português'}
           >
-            {open ? <FiX /> : <FiMenu />}
+            {lang === 'pt' ? <FlagBR /> : <FlagUS />}
           </button>
         </div>
-      </div>
-
-      {open && (
-        <nav className="md:hidden border-t border-white/10 bg-bg/95 backdrop-blur-md">
-          <ul className="px-5 py-3 flex flex-col gap-1 max-w-container mx-auto">
-            {SECTIONS.map((s) => (
-              <li key={s.id}>
-                <a
-                  href={`#${s.id}`}
-                  onClick={() => setOpen(false)}
-                  className="block py-2 text-sm text-muted hover:text-text"
-                >
-                  {t(s.key)}
-                </a>
-              </li>
-            ))}
-            <li>
-              <a
-                href={cvHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-                className="inline-flex items-center gap-2 py-2 text-sm text-text"
-              >
-                <FiDownload /> {t('nav.downloadCv')}
-              </a>
-            </li>
-          </ul>
-        </nav>
-      )}
+      </nav>
     </header>
   )
 }
