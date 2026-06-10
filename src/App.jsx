@@ -2,6 +2,8 @@ import { useLayoutEffect, useState } from 'react'
 import { LanguageProvider } from './i18n/LanguageContext'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import Experiences from './components/Experiences'
+import Education from './components/Education'
 import Preloader from './components/Preloader'
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
       <Navbar />
       <main className="w-full">
         <Home />
+        <Experiences />
+        <Education />
       </main>
     </LanguageProvider>
   )
