@@ -1,14 +1,19 @@
 import { useLang } from '../i18n/useLang'
+import { useReveal } from '../hooks/useReveal'
 
 export default function Education() {
   const { t } = useLang()
   const items = t('education.items') || []
   const languages = t('education.languages')
   const languagesTitle = t('education.languagesTitle')
+  const { ref, visible } = useReveal()
 
   return (
     <section id="education" className="px-5 sm:px-8 py-24 sm:py-32">
-      <div className="mx-auto max-w-container">
+      <div
+        ref={ref}
+        className={`mx-auto max-w-container transition-opacity ${visible ? 'opacity-100 animate-cueIn' : 'opacity-0'}`}
+      >
         <div className="flex items-baseline justify-between mb-10">
           <h2 className="font-display font-bold text-text text-[clamp(28px,5vw,48px)] tracking-tight">
             {t('education.title')}

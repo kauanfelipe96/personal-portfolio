@@ -5,6 +5,8 @@ import Home from './components/Home'
 import Experiences from './components/Experiences'
 import Stack from './components/Stack'
 import Education from './components/Education'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 import Preloader from './components/Preloader'
 
 function App() {
@@ -25,7 +27,9 @@ function App() {
         <Experiences />
         <Stack />
         <Education />
+        <Contact />
       </main>
+      <Footer />
     </LanguageProvider>
   )
 }
