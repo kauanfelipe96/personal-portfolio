@@ -20,6 +20,7 @@ export default function Experiences() {
                 <div className="tl-top">
                   <div>
                     <h3 className="tl-role">{job.role}</h3>
+                    {job.prevRole && <div className="tl-prev-role">{job.prevRole}</div>}
                     <div className="tl-company">
                       {job.company} <span className="tl-place">· {job.place}</span>
                     </div>
