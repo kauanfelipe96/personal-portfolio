@@ -153,8 +153,8 @@ export default function AuraBackground({ intensity = 0.4 }) {
   }, [])
 
   return (
-    <div className="bg-wrap">
-      <canvas ref={ref} className="bg-layer" aria-hidden="true" />
+    <div className="fixed inset-0 z-0 bg-bg">
+      <canvas ref={ref} className="absolute inset-0 block h-full w-full transition-opacity duration-1000" aria-hidden="true" />
       <div className="bg-grain" aria-hidden="true"></div>
     </div>
   )

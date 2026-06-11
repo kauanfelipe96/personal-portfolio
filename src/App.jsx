@@ -12,9 +12,9 @@ function App() {
   return (
     <LanguageProvider>
       <AuraBackground intensity={0.4} />
-      <div className="content">
+      <div className="relative z-[1]">
         <Navbar />
-        <main className="main">
+        <main className="mx-auto max-w-container px-pad">
           <Home />
           <Experiences />
           <Stack />

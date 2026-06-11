@@ -3,12 +3,30 @@ import { GithubIcon, LinkedinIcon, EmailIcon } from './icons'
 
 export function SectionHeader({ num, title }) {
   return (
-    <div className="sec-head">
-      <h2 className="sec-title">
-        <span className="sec-num">{num}</span>
+    <div className="mb-11">
+      <h2 className="text-veil m-0 flex items-baseline gap-4 font-display text-[clamp(30px,5vw,50px)] font-semibold leading-[1.04] tracking-[-0.02em]">
+        <span className="flex-none font-mono text-[15px] font-semibold tracking-[0.04em] text-accent-bright">{num}</span>
         {title}
       </h2>
     </div>
+  )
+}
+
+const BTN_BASE =
+  'group inline-flex cursor-pointer items-center gap-2.5 rounded-xl border border-transparent px-[22px] py-[13px] font-mono text-[13.5px] font-medium transition-all duration-[220ms] ease-[ease] hover:-translate-y-0.5'
+
+const BTN_VARIANTS = {
+  primary:
+    'bg-accent font-semibold text-[#05070d] shadow-[0_8px_30px_var(--accent-soft)] hover:bg-accent-bright hover:shadow-[0_10px_40px_color-mix(in_oklch,var(--accent),transparent_55%)]',
+  ghost:
+    'border-glass-bd-2 bg-glass text-text backdrop-blur-[8px] hover:border-accent hover:text-accent-bright',
+}
+
+export function Button({ href, variant = 'primary', children, ...rest }) {
+  return (
+    <a className={`${BTN_BASE} ${BTN_VARIANTS[variant]}`} href={href} {...rest}>
+      {children}
+    </a>
   )
 }
 
@@ -106,13 +124,13 @@ export function CountUp({ to, decimals = 0, group = false, suffix = '', lang }) 
 
 export function Stats({ stats, lang }) {
   return (
-    <div className="stats">
+    <div className="flex flex-wrap gap-[clamp(20px,4vw,44px)]">
       {stats.map((s, i) => (
-        <div className="stat" key={i}>
-          <div className="stat-val">
+        <div key={i}>
+          <div className="text-veil font-display text-[clamp(26px,3.4vw,36px)] font-semibold leading-none tracking-[-0.02em]">
             <CountUp to={s.to} decimals={s.decimals} group={s.group} suffix={s.suffix} lang={lang} />
           </div>
-          <div className="stat-label">{s.label}</div>
+          <div className="text-veil mt-2 max-w-[130px] font-mono text-[11.5px] text-muted">{s.label}</div>
         </div>
       ))}
     </div>
@@ -125,12 +143,13 @@ export function SocialRow({ t, compact }) {
     { label: 'LinkedIn', href: t.linkedin, icon: <LinkedinIcon /> },
     { label: 'Email', href: `mailto:${t.email}`, icon: <EmailIcon /> },
   ]
+  const size = compact ? 'h-10 w-10 rounded-[11px]' : 'h-11 w-11 rounded-xl'
   return (
-    <div className={`social-row ${compact ? 'compact' : ''}`}>
+    <div className="flex flex-wrap gap-3">
       {links.map((l) => (
         <a
           key={l.label}
-          className="social-icon"
+          className={`${size} grid place-items-center border border-glass-bd bg-glass text-muted backdrop-blur-[8px] transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent-bright hover:shadow-[0_0_22px_var(--accent-soft)] [&>svg]:h-[18px] [&>svg]:w-[18px]`}
           href={l.href}
           target="_blank"
           rel="noreferrer"
@@ -146,10 +165,14 @@ export function SocialRow({ t, compact }) {
 
 export function ScrollCue({ label }) {
   return (
-    <a className="scroll-cue" href="#work" aria-label={label}>
-      <span className="scroll-cue-label">{label}</span>
-      <span className="scroll-cue-mouse">
-        <span className="scroll-cue-wheel"></span>
+    <a
+      className="animate-cueIn absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-[9px] text-muted opacity-0 transition-colors duration-[250ms] hover:text-accent-bright motion-reduce:animate-none motion-reduce:opacity-100 [@media(max-height:560px)]:hidden"
+      href="#work"
+      aria-label={label}
+    >
+      <span className="font-mono text-[10px] uppercase tracking-[0.24em]">{label}</span>
+      <span className="flex h-[34px] w-[22px] justify-center rounded-xl border-[1.5px] border-current pt-1.5">
+        <span className="animate-scrollwheel h-[7px] w-[3px] rounded-sm bg-current motion-reduce:animate-none"></span>
       </span>
     </a>
   )
