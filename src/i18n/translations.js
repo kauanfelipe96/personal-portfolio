@@ -53,7 +53,6 @@ export const translations = {
       {
         company: 'Aquativa Golf Resort',
         role: 'Analista de Desenvolvimento',
-        prevRole: 'Promovido em Mar 2026 · antes Desenvolvedor Full Stack',
         place: 'Cornélio Procópio, BR',
         period: 'Jan 2025 — Presente',
         current: true,
@@ -151,7 +150,6 @@ export const translations = {
       {
         company: 'Aquativa Golf Resort',
         role: 'Development Analyst',
-        prevRole: 'Promoted Mar 2026 · previously Full Stack Developer',
         place: 'Cornélio Procópio, BR',
         period: 'Jan 2025 — Present',
         current: true,

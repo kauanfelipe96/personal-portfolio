@@ -51,7 +51,7 @@ export default function Navbar() {
       <nav
         className={`pointer-events-auto flex items-center gap-1.5 rounded-2xl border py-[7px] pl-[9px] pr-2 transition-[background,border-color,box-shadow,backdrop-filter] duration-[350ms] max-[560px]:gap-[3px] max-[560px]:p-1.5 ${
           scrolled
-            ? 'border-glass-bd-2 bg-white/[0.045] shadow-[0_14px_44px_rgba(0,0,0,0.3)] backdrop-blur-[18px] backdrop-saturate-150'
+            ? 'border-glass-bd-2 bg-white/[0.045] shadow-[0_14px_44px_rgba(0,0,0,0.3)] backdrop-blur-sm backdrop-saturate-150'
             : 'border-transparent bg-transparent'
         }`}
       >

@@ -26,7 +26,6 @@ export default function Experiences() {
                     <h3 className="text-veil m-0 mb-1 font-display text-[20px] font-semibold tracking-[-0.01em]">
                       {job.role}
                     </h3>
-                    {job.prevRole && <div className="mb-1.5 font-mono text-[11.5px] text-muted">{job.prevRole}</div>}
                     <div className="text-veil font-mono text-[13px] text-accent-bright">
                       {job.company} <span className="text-muted">· {job.place}</span>
                     </div>
