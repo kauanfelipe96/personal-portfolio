@@ -50,20 +50,25 @@ void main(){
 
 function compile(gl, type, src) {
   const s = gl.createShader(type)
+  if (!s) return null
   gl.shaderSource(s, src)
   gl.compileShader(s)
   if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
     console.error('Shader error:', gl.getShaderInfoLog(s))
+    return null
   }
   return s
 }
 
 function createRenderer(canvas, getIntensity) {
   const gl = canvas.getContext('webgl', { antialias: false, alpha: false, premultipliedAlpha: false })
-  if (!gl) return null
+  if (!gl || gl.isContextLost()) return null
+  const vert = compile(gl, gl.VERTEX_SHADER, VERT)
+  const frag = compile(gl, gl.FRAGMENT_SHADER, FRAG_AURA)
   const prog = gl.createProgram()
-  gl.attachShader(prog, compile(gl, gl.VERTEX_SHADER, VERT))
-  gl.attachShader(prog, compile(gl, gl.FRAGMENT_SHADER, FRAG_AURA))
+  if (!vert || !frag || !prog) return null
+  gl.attachShader(prog, vert)
+  gl.attachShader(prog, frag)
   gl.linkProgram(prog)
   gl.useProgram(prog)
 
@@ -123,10 +128,11 @@ function createRenderer(canvas, getIntensity) {
       mouse.tx = x
       mouse.ty = y
     },
+    // não descarta o contexto WebGL: o canvas vive pela vida toda da página e
+    // remontagens (StrictMode/HMR) reusam o mesmo canvas — um contexto perdido
+    // não pode ser recriado e quebraria a segunda montagem
     destroy() {
       this.pause()
-      const ext = gl.getExtension('WEBGL_lose_context')
-      if (ext) ext.loseContext()
     },
   }
 }
