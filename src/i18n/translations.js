@@ -102,6 +102,13 @@ export const translations = {
         repo: 'https://github.com/kauanfelipe96/personal-portfolio',
         demo: 'https://kauanfelipe96.github.io/personal-portfolio/',
       },
+      {
+        title: 'Cobertura IEM Cologne Major 2026',
+        desc: "Site de cobertura do Major de CS2 com Pick'em Challenge interativo, autenticação de usuários e painel admin com CRUD — HTML, CSS e JavaScript puro, com persistência via Web Storage.",
+        tags: ['HTML5', 'CSS3', 'JavaScript', 'Web Storage'],
+        repo: 'https://github.com/kauanfelipe96/projeto-web-frontend',
+        demo: 'https://kauanfelipe96.github.io/projeto-web-frontend/',
+      },
     ],
     educationTitle: 'Formação',
     education: [
@@ -198,6 +205,13 @@ export const translations = {
         tags: ['React', 'Vite', 'Tailwind', 'WebGL', 'GitHub Actions'],
         repo: 'https://github.com/kauanfelipe96/personal-portfolio',
         demo: 'https://kauanfelipe96.github.io/personal-portfolio/',
+      },
+      {
+        title: 'IEM Cologne Major 2026 coverage',
+        desc: "CS2 Major coverage site with an interactive Pick'em Challenge, user authentication and an admin panel with CRUD — plain HTML, CSS and JavaScript, persisting data via Web Storage.",
+        tags: ['HTML5', 'CSS3', 'JavaScript', 'Web Storage'],
+        repo: 'https://github.com/kauanfelipe96/projeto-web-frontend',
+        demo: 'https://kauanfelipe96.github.io/projeto-web-frontend/',
       },
     ],
     educationTitle: 'Education',
