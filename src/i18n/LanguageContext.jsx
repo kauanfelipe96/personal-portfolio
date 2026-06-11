@@ -24,6 +24,7 @@ export function LanguageProvider({ children }) {
     if (typeof window !== 'undefined') {
       window.localStorage.setItem(STORAGE_KEY, lang);
       document.documentElement.setAttribute('lang', lang);
+      document.title = translations[lang].pageTitle;
     }
   }, [lang]);
 

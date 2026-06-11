@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -77,12 +75,6 @@ a { color: inherit; text-decoration: none; }
   -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%);
   border-color: var(--glass-bd-2); box-shadow: 0 14px 44px rgba(0, 0, 0, 0.3);
 }
-.brand-mark {
-  font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: -.5px;
-  width: 36px; height: 36px; flex: 0 0 36px; display: grid; place-items: center; color: var(--bg);
-  background: var(--accent); border-radius: 10px;
-  box-shadow: 0 0 0 1px color-mix(in oklch, var(--accent), white 20%), 0 6px 18px var(--accent-soft);
-}
 .brand-logo {
   width: 36px; height: 36px; border-radius: 10px; object-fit: cover; display: block;
   box-shadow: 0 0 0 1px var(--glass-bd-2), 0 6px 18px rgba(0, 0, 0, 0.4);
@@ -158,7 +150,6 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .scroll-cue { opacity: 1; animation: none; } .scroll-cue-wheel { animation: none; } }
 @media (max-height: 560px) { .scroll-cue { display: none; } }
 
-.hero-title { font-family: var(--display); font-weight: 600; font-size: clamp(36px, 6.4vw, 76px); line-height: 1.02; letter-spacing: -.03em; margin: 0; max-width: 16ch; text-wrap: balance; }
 .hero-sub { font-size: clamp(15px, 1.8vw, 18.5px); line-height: 1.6; color: #f3f5fa; max-width: 56ch; margin: 0; }
 .hero-sub.wide { max-width: 62ch; }
 

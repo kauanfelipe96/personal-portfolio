@@ -30,6 +30,7 @@ export const translations = {
   pt: {
     lang: 'pt',
     ...shared,
+    pageTitle: 'Kauan Felipe — Desenvolvedor Full Stack',
     role: 'Desenvolvedor Full Stack',
     location: 'Cornélio Procópio, Brasil',
     available: 'Disponível para novos projetos',
@@ -112,10 +113,12 @@ export const translations = {
     contactSub: 'Aberto a oportunidades como Desenvolvedor Full Stack. Me mande uma mensagem.',
     contactCta: 'Enviar e-mail',
     cvCta: 'Baixar CV',
+    backToTop: '↑ Topo',
   },
   en: {
     lang: 'en',
     ...shared,
+    pageTitle: 'Kauan Felipe — Full Stack Software Engineer',
     role: 'Full Stack Developer',
     location: 'Cornélio Procópio, Brazil',
     available: 'Available for new projects',
@@ -198,6 +201,7 @@ export const translations = {
     contactSub: 'Open to opportunities as a Full Stack Developer. Drop me a message.',
     contactCta: 'Send email',
     cvCta: 'Download CV',
+    backToTop: '↑ Top',
   },
 };
 

@@ -12,7 +12,7 @@ export default function Footer() {
         © {new Date().getFullYear()} {t.name}
       </span>
       <a className="footer-top" href="#top">
-        ↑ Top
+        {t.backToTop}
       </a>
     </footer>
   )
