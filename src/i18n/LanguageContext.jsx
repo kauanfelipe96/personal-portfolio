@@ -1,5 +1,5 @@
 import { createContext, useCallback, useEffect, useMemo, useState } from 'react';
-import { translations, getByPath } from './translations';
+import { translations } from './translations';
 
 const STORAGE_KEY = 'portfolio-lang';
 
@@ -14,7 +14,7 @@ function detectInitialLang() {
 export const LanguageContext = createContext({
   lang: 'pt',
   setLang: () => {},
-  t: (key) => key,
+  dict: translations.pt,
 });
 
 export function LanguageProvider({ children }) {
@@ -32,15 +32,7 @@ export function LanguageProvider({ children }) {
     if (next === 'pt' || next === 'en') setLangState(next);
   }, []);
 
-  const t = useCallback(
-    (key) => {
-      const value = getByPath(translations[lang], key);
-      return value !== undefined ? value : key;
-    },
-    [lang]
-  );
-
-  const value = useMemo(() => ({ lang, setLang, t }), [lang, setLang, t]);
+  const value = useMemo(() => ({ lang, setLang, dict: translations[lang] }), [lang, setLang]);
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }

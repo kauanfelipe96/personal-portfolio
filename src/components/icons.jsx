@@ -1,7 +1,8 @@
-import { LuBriefcase, LuLayers, LuGraduationCap, LuMail, LuGithub, LuLinkedin } from 'react-icons/lu'
+import { LuBriefcase, LuLayers, LuFolderGit2, LuGraduationCap, LuMail, LuGithub, LuLinkedin } from 'react-icons/lu'
 
 export const WorkIcon = LuBriefcase
 export const SkillsIcon = LuLayers
+export const ProjectsIcon = LuFolderGit2
 export const EducationIcon = LuGraduationCap
 export const ContactIcon = LuMail
 export const EmailIcon = LuMail

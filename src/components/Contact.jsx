@@ -1,10 +1,8 @@
 import { useLang } from '../i18n/useLang'
-import { translations } from '../i18n/translations'
 import { Reveal, SocialRow, Button } from './primitives'
 
 export default function Contact() {
-  const { lang } = useLang()
-  const t = translations[lang]
+  const { dict: t } = useLang()
   const cvHref = `${import.meta.env.BASE_URL}${t.cv}`
 
   return (

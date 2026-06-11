@@ -1,10 +1,8 @@
 import { useLang } from '../i18n/useLang'
-import { translations } from '../i18n/translations'
 import logo from '../assets/images/logo.jpg'
 
 export default function Footer() {
-  const { lang } = useLang()
-  const t = translations[lang]
+  const { dict: t } = useLang()
   return (
     <footer className="mx-auto mt-20 flex max-w-container items-center gap-4 border-t border-glass-bd px-pad pb-12 pt-10">
       <img

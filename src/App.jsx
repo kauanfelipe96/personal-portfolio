@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Experiences from './components/Experiences'
 import Stack from './components/Stack'
+import Projects from './components/Projects'
 import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -18,6 +19,7 @@ function App() {
           <Home />
           <Experiences />
           <Stack />
+          <Projects />
           <Education />
           <Contact />
         </main>

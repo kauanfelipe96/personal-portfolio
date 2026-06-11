@@ -36,7 +36,7 @@ export const translations = {
     available: 'Disponível para novos projetos',
     scrollHint: 'Ver mais',
     cv: 'Kauan-Felipe-CV-PT.pdf',
-    nav: { work: 'Experiência', skills: 'Stack', education: 'Formação', contact: 'Contato' },
+    nav: { work: 'Experiência', skills: 'Stack', projects: 'Projetos', education: 'Formação', contact: 'Contato' },
     hero: {
       sub: 'Desenvolvedor full-stack e arquiteto em .NET e React, responsável por sistemas críticos de ponta a ponta — gateways de pagamento, integrações ERP e modernização de APIs legadas.',
       ctaPrimary: 'Ver experiência',
@@ -94,6 +94,16 @@ export const translations = {
     skillsTitle: 'Stack & Tecnologias',
     practicesLabel: 'Práticas & conceitos',
     practices: concepts.pt,
+    projectsTitle: 'Projetos',
+    projects: [
+      {
+        title: 'Portfólio pessoal',
+        desc: 'Este site — SPA bilíngue (PT/EN) com background animado em WebGL, design glassmorphism e deploy contínuo no GitHub Pages via GitHub Actions.',
+        tags: ['React', 'Vite', 'Tailwind', 'WebGL', 'GitHub Actions'],
+        repo: 'https://github.com/kauanfelipe96/personal-portfolio',
+        demo: 'https://kauanfelipe96.github.io/personal-portfolio/',
+      },
+    ],
     educationTitle: 'Formação',
     education: [
       {
@@ -124,7 +134,7 @@ export const translations = {
     available: 'Available for new projects',
     scrollHint: 'See more',
     cv: 'Kauan-Felipe-CV-EN.pdf',
-    nav: { work: 'Experience', skills: 'Stack', education: 'Education', contact: 'Contact' },
+    nav: { work: 'Experience', skills: 'Stack', projects: 'Projects', education: 'Education', contact: 'Contact' },
     hero: {
       sub: 'Full-stack developer and architect in .NET and React, owning mission-critical systems end-to-end — payment gateways, ERP integrations and legacy API modernization.',
       ctaPrimary: 'View experience',
@@ -182,6 +192,16 @@ export const translations = {
     skillsTitle: 'Stack & Technologies',
     practicesLabel: 'Practices & concepts',
     practices: concepts.en,
+    projectsTitle: 'Projects',
+    projects: [
+      {
+        title: 'Personal portfolio',
+        desc: 'This site — a bilingual (PT/EN) SPA with an animated WebGL background, glassmorphism design and continuous deployment to GitHub Pages via GitHub Actions.',
+        tags: ['React', 'Vite', 'Tailwind', 'WebGL', 'GitHub Actions'],
+        repo: 'https://github.com/kauanfelipe96/personal-portfolio',
+        demo: 'https://kauanfelipe96.github.io/personal-portfolio/',
+      },
+    ],
     educationTitle: 'Education',
     education: [
       {
@@ -205,6 +225,3 @@ export const translations = {
   },
 };
 
-export function getByPath(obj, path) {
-  return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
-}

@@ -1,10 +1,8 @@
 import { useLang } from '../i18n/useLang'
-import { translations } from '../i18n/translations'
 import { Reveal, SectionHeader } from './primitives'
 
 export default function Experiences() {
-  const { lang } = useLang()
-  const t = translations[lang]
+  const { dict: t } = useLang()
 
   return (
     <section className="scroll-mt-[100px] pt-[clamp(80px,12vh,140px)]" id="work">

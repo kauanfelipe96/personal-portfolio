@@ -1,15 +1,13 @@
 import { useLang } from '../i18n/useLang'
-import { translations } from '../i18n/translations'
 import { Reveal, SectionHeader } from './primitives'
 import { GradCapIcon } from './icons'
 
 export default function Education() {
-  const { lang } = useLang()
-  const t = translations[lang]
+  const { dict: t } = useLang()
 
   return (
     <section className="scroll-mt-[100px] pt-[clamp(80px,12vh,140px)]" id="education">
-      <SectionHeader num="03" title={t.educationTitle} />
+      <SectionHeader num="04" title={t.educationTitle} />
       <div className="flex flex-col gap-4">
         {t.education.map((e, i) => (
           <Reveal key={i}>

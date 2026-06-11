@@ -116,8 +116,14 @@ export function CountUp({ to, decimals = 0, group = false, suffix = '', lang }) 
   }, [to, lang])
   return (
     <span ref={ref}>
-      {fmt(val)}
-      {suffix}
+      <span aria-hidden="true">
+        {fmt(val)}
+        {suffix}
+      </span>
+      <span className="sr-only">
+        {fmt(to)}
+        {suffix}
+      </span>
     </span>
   )
 }
